@@ -1,0 +1,23 @@
+/*
+ * app.c
+ *
+ * Created: 10/3/2022 7:13:27 AM
+ *  Author: YAS
+ */ 
+#include "app.h"
+void APP_init(void)
+{
+    overflowcounter = 0;
+	LED_init(RED_LED_PORT,RED_LED_PIN);
+	//Choose timer mode 
+	TCCR0 = 0x00; // Normal mode
+	
+	
+}
+void APP_start(void)
+{
+	LED_on(RED_LED_PORT,RED_LED_PIN);
+	delay_500();
+	LED_off(RED_LED_PORT,RED_LED_PIN);
+	delay_300();
+}
